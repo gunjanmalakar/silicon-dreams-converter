@@ -1,0 +1,13 @@
+{
+  "name": "Silicon Dreams Video Converter",
+  "short_name": "SD Converter",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0d13",
+  "theme_color": "#0d0d13",
+  "icons": [
+    { "src": "logo.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

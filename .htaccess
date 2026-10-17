@@ -1,0 +1,27 @@
+# Silicon Dreams – Apache settings
+DirectoryIndex index.html
+ErrorDocument 404 /video_convert/404.html
+
+# Keep server files private
+<FilesMatch "\.(py|pyc|txt|md)$|^Dockerfile$">
+  Require all denied
+</FilesMatch>
+<Files "robots.txt">
+  Require all granted
+</Files>
+
+# Correct file types
+AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
+
+# Speed: compression + browser caching
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
